@@ -14,7 +14,7 @@ const makeGalleryItemMarkup = (arr) => {
 const galleryContainerRef = document.querySelector('.gallery');
 galleryContainerRef.innerHTML = makeGalleryItemMarkup(galleryItems);
 
-const lightboxGallerySettings = new SimpleLightbox('.gallery a ', {
+const lightboxSlider = new SimpleLightbox('.gallery a ', {
     sourceAttr: 'href',
     captions: true,
     captionsData: 'title',
