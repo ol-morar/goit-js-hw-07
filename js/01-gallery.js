@@ -43,10 +43,3 @@ const onGalleryImgClick = (e) => {
 };
 
 galleryContainerRef.addEventListener('click', onGalleryImgClick);
-if (instance.show()) {
-    document.addEventListener('keydown', (e) => {
-        if (e.code && e.key === 'Escape') {
-            instance.close();
-        }
-    });
-}
