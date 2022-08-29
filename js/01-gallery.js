@@ -20,9 +20,7 @@ const makeGalleryItemMarkup = (arr) => {
 const galleryContainerRef = document.querySelector('.gallery');
 galleryContainerRef.innerHTML = makeGalleryItemMarkup(galleryItems);
 
-const onGalleryImgClick = (e) => {
-    if (e.target.nodeName !== 'IMG') return;
-
+const createLightboxInstance = (e) => {
     const targetedImgUrl = e.target.dataset.source;
     const instance = basicLightbox.create(`
     <img src="${targetedImgUrl}" width="800" height="600">
@@ -35,7 +33,12 @@ const onGalleryImgClick = (e) => {
             }
         })
     );
+};
 
+const onGalleryImgClick = (e) => {
+    if (e.target.nodeName !== 'IMG') return;
+
+    createLightboxInstance(e);
     e.preventDefault();
 };
 
